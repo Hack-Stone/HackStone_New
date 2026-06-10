@@ -48,8 +48,8 @@ export default function Products() {
 
     <div className="bg-background text-primary font-body-md selection:bg-syntax-lime selection:text-primary">
       {/* Hero Section */}
-      <section className="grid grid-cols-1 md:grid-cols-12 border-b border-primary min-h-[614px] text-left">
-        <div className="md:col-span-7 p-grid-margin flex flex-col justify-center border-r border-primary">
+      <section className="grid grid-cols-1 md:grid-cols-12 border-b border-primary md:min-h-[614px] text-left">
+        <div className="md:col-span-7 p-grid-margin flex flex-col justify-center border-b md:border-b-0 md:border-r border-primary">
           <span className="font-ui-label text-ui-label text-on-surface-variant mb-4 flex items-center gap-2">
             <span className="w-2 h-2 bg-primary"></span> TERMINAL_STATUS: ACTIVE
           </span>
@@ -170,7 +170,7 @@ export default function Products() {
 
       {/* ShipCore Deep Dive */}
       <section id="deepdive" className="grid grid-cols-1 md:grid-cols-12 border-b border-primary text-left">
-        <div className="md:col-span-4 p-grid-margin border-r border-primary bg-surface-container-lowest">
+        <div className="md:col-span-4 p-grid-margin border-b md:border-b-0 md:border-r border-primary bg-surface-container-lowest">
           <h2 className="font-headline-md text-headline-md uppercase mb-stack-md text-primary font-bold">
             ShipCore: <br />Functional Layers
           </h2>
@@ -239,7 +239,7 @@ export default function Products() {
         <h2 className="font-headline-md text-headline-md uppercase mb-stack-lg border-l-4 border-primary pl-4 text-primary font-bold">
           System Features
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-stack-md">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-stack-md">
           <div className="brutalist-border p-6 bg-background hover:translate-y-[-4px] transition-transform">
             <span className="material-symbols-outlined text-primary mb-4">dashboard_customize</span>
             <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Fleet Management</h4>

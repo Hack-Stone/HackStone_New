@@ -5,6 +5,7 @@ import BrutalistButton from './BrutalistButton';
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const activeLinkClass = "font-ui-label text-ui-label text-primary dark:text-syntax-lime border-b border-primary dark:border-syntax-lime pb-1 hover:text-secondary dark:hover:text-syntax-lime transition-colors duration-150";
   const inactiveLinkClass = "font-ui-label text-ui-label text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-syntax-lime transition-colors duration-150";
@@ -87,8 +88,69 @@ export default function Navbar() {
           >
             Get Started
           </BrutalistButton>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden material-symbols-outlined text-primary dark:text-on-primary p-1 hover:opacity-80 transition-opacity"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? 'close' : 'menu'}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile/Tablet Menu Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-primary dark:border-outline bg-background dark:bg-primary px-grid-margin py-stack-md flex flex-col gap-stack-md transition-all duration-200">
+          <NavLink
+            to="/services"
+            onClick={() => setMobileMenuOpen(false)}
+            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+          >
+            Services
+          </NavLink>
+          <NavLink
+            to="/products"
+            onClick={() => setMobileMenuOpen(false)}
+            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+          >
+            Products
+          </NavLink>
+          <NavLink
+            to="/testimonials"
+            onClick={() => setMobileMenuOpen(false)}
+            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+          >
+            Case Studies
+          </NavLink>
+          <NavLink
+            to="/about"
+            onClick={() => setMobileMenuOpen(false)}
+            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+          >
+            Contact
+          </NavLink>
+          <div className="pt-2 border-t border-primary/20 dark:border-outline/20">
+            <BrutalistButton
+              to="/contact"
+              variant="primary"
+              size="sm"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full text-center"
+            >
+              Get Started
+            </BrutalistButton>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

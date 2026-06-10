@@ -10,7 +10,7 @@ export default function About() {
     <div className="w-full max-w-[1440px] mx-auto blueprint-pattern border-x border-primary min-h-screen text-left">
       {/* Mission Section */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-gutter border-b border-primary">
-        <div className="md:col-span-8 p-grid-margin bg-background border-r border-primary">
+        <div className="md:col-span-8 p-grid-margin bg-background border-b md:border-b-0 md:border-r border-primary">
           <div className="mb-stack-lg">
             <span className="font-code-sm text-code-sm uppercase tracking-widest text-on-surface-variant font-bold">
               [ 01_MISSION_STATEMENT ]
@@ -156,7 +156,7 @@ export default function About() {
 
       {/* Story Timeline */}
       <section className="grid grid-cols-1 md:grid-cols-12 border-b border-primary text-left bg-background">
-        <div className="md:col-span-4 p-grid-margin border-r border-primary bg-background sticky top-16 h-fit">
+        <div className="md:col-span-4 p-grid-margin border-b md:border-b-0 md:border-r border-primary bg-background sticky top-16 h-fit">
           <span className="font-code-sm text-code-sm block mb-stack-md text-primary font-bold">[ 03_EVOLUTION_LOG ]</span>
           <h2 className="font-display-lg text-headline-md mb-stack-md text-primary font-bold">THE HACKSTONE STORY</h2>
           <div className="w-full h-[200px] bg-surface-container-highest border border-primary relative overflow-hidden">

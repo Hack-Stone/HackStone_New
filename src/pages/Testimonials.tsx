@@ -104,7 +104,7 @@ export default function Testimonials() {
           </div>
 
           {/* Case Study #02 */}
-          <div className="md:col-span-4 bg-surface-container p-stack-lg flex flex-col justify-between border-l border-primary">
+          <div className="md:col-span-4 bg-surface-container p-stack-lg flex flex-col justify-between border-t md:border-t-0 md:border-l border-primary">
             <div>
               <span className="material-symbols-outlined text-[48px] text-syntax-purple mb-stack-md">format_quote</span>
               <p className="font-body-md text-on-surface mb-stack-lg text-primary italic font-medium">

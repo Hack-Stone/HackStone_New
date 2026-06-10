@@ -63,7 +63,7 @@ export default function Services() {
             {/* Cybersecurity */}
             <div 
               onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Cybersecurity...')}
-              className="border-b border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
+              className="border-b md:border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
             >
               <div className="flex justify-between items-start mb-stack-lg">
                 <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110 group-hover:text-syntax-lime">
@@ -103,7 +103,7 @@ export default function Services() {
             {/* ERP Systems */}
             <div 
               onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for ERP Systems...')}
-              className="border-b border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
+              className="border-b md:border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
             >
               <div className="flex justify-between items-start mb-stack-lg">
                 <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110 group-hover:text-syntax-lime">

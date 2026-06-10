@@ -13,20 +13,20 @@ export default function Home() {
       {/* Hero Section */}
       <section className="max-w-[1440px] mx-auto px-grid-margin py-section-padding border-b border-primary">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-stack-lg items-center">
-          <div className="md:col-span-8 space-y-stack-md text-left">
-            <span className="font-code-sm text-code-sm bg-syntax-lime px-2 py-1 border border-primary uppercase tracking-widest text-primary font-bold">
+          <div className="md:col-span-8 flex flex-col items-start text-left">
+            <span className="inline-block mb-5 font-code-sm text-code-sm bg-syntax-lime px-2 py-1 border border-primary uppercase tracking-widest text-primary font-bold leading-none">
               STATUS: READY
             </span>
-            <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg uppercase leading-none text-primary">
+            <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg uppercase text-primary mt-0 mb-6 leading-[1.15] max-w-[700px]">
               BUILD SECURE DIGITAL INFRASTRUCTURE
             </h1>
-            <div className="font-ui-label text-ui-label text-primary dark:text-syntax-lime font-bold uppercase tracking-wider my-stack-sm">
+            <div className="font-ui-label text-ui-label text-primary dark:text-syntax-lime font-bold uppercase tracking-wider mt-0 mb-5">
               Cybersecurity • Custom ERP • Cloud Engineering
             </div>
-            <p className="font-body-md text-headline-md max-w-2xl text-on-surface-variant">
+            <p className="font-body-md text-headline-md max-w-2xl text-on-surface-variant mt-0 mb-8">
               We design secure software, enterprise ERP systems, and scalable cloud platforms for growing businesses.
             </p>
-            <div className="flex flex-wrap gap-stack-md pt-stack-md">
+            <div className="flex flex-wrap gap-stack-md mt-0">
               <BrutalistButton 
                 to="/contact" 
                 variant="primary"
