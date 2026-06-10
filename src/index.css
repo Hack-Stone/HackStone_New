@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --color-secondary: #546500;
+  --color-background: #f9f9f9;
+  --color-surface-container-low: #f4f3f3;
+  --color-surface-dim: #dadada;
+  --color-primary: #040505;
+  --color-on-secondary-container: #586a00;
+  --color-outline: #747878;
+  --color-surface-tint: #5f5e5e;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-primary-container: #878585;
+  --color-on-error-container: #93000a;
+  --color-inverse-on-surface: #f1f1f1;
+  --color-on-secondary-fixed: #181e00;
+  --color-on-primary: #ffffff;
+  --color-inverse-surface: #2f3131;
+  --color-on-secondary-fixed-variant: #3f4c00;
+  --color-on-error: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-border-subtle: #D1D1D1;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface: #f9f9f9;
+  --color-surface-container: #eeeeee;
+  --color-primary-fixed: #e5e2e1;
+  --color-on-tertiary-container: #af6cc2;
+  --color-tertiary-fixed: #fad7ff;
+  --color-surface-variant: #e2e2e2;
+  --color-surface-bright: #f9f9f9;
+  --color-secondary-fixed-dim: #b2d400;
+  --color-on-tertiary-fixed: #330044;
+  --color-inverse-primary: #c8c6c5;
+  --color-on-tertiary-fixed-variant: #692b7d;
+  --color-on-primary-fixed-variant: #474746;
+  --color-tertiary: #0d0014;
+  --color-tertiary-container: #370049;
+  --color-on-primary-fixed: #1b1b1c;
+  --color-syntax-purple: #E099F3;
+  --color-error: #ba1a1a;
+  --color-primary-container: #1e1e1e;
+  --color-error-container: #ffdad6;
+  --color-surface-cream: #F9F9F7;
+  --color-syntax-lime: #C4E817;
+  --color-primary-fixed-dim: #c8c6c5;
+  --color-on-background: #1a1c1c;
+  --color-on-secondary: #ffffff;
+  --color-outline-variant: #c4c7c7;
+  --color-on-surface: #1a1c1c;
+  --color-tertiary-fixed-dim: #f0b0ff;
+  --color-on-surface-variant: #444748;
+  --color-secondary-fixed: #cdf126;
+  --color-surface-container-lowest: #ffffff;
+  --color-secondary-container: #caef22;
+
+  /* Font Families */
+  --font-ui-label: "JetBrains Mono", monospace;
+  --font-display-lg-mobile: "Hanken Grotesk", sans-serif;
+  --font-display-lg: "Hanken Grotesk", sans-serif;
+  --font-body-md: "Geist", sans-serif;
+  --font-headline-md: "Hanken Grotesk", sans-serif;
+  --font-code-sm: "JetBrains Mono", monospace;
+
+  /* Spacing */
+  --spacing-stack-lg: 2rem;
+  --spacing-grid-margin: 2rem;
+  --spacing-section-padding: 4rem;
+  --spacing-gutter: 1px;
+  --spacing-stack-sm: 0.5rem;
+  --spacing-stack-md: 1rem;
+}
+
+/* Custom Brutalist & Technical Styles */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.brutalist-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(4, 5, 5, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(4, 5, 5, 0.05) 1px, transparent 1px);
+}
+
+.blueprint-pattern {
+  background-color: #f9f9f9;
+  background-image: radial-gradient(#040505 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  background-position: -0.5px -0.5px;
+}
+
+.technical-grid {
+  background-image: 
+      linear-gradient(to right, #e2e2e2 1px, transparent 1px),
+      linear-gradient(to bottom, #e2e2e2 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.grid-bg {
+  background-image: 
+      linear-gradient(to right, #040505 1px, transparent 1px),
+      linear-gradient(to bottom, #040505 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-color: #f9f9f9;
+}
+
+.grid-blueprint {
+  background-image: radial-gradient(#040505 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  background-color: #f9f9f9;
+}
+
+.scanline {
+  width: 100%;
+  height: 1px;
+  background: rgba(4, 5, 5, 0.1);
+  position: absolute;
+  animation: scan 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  from { top: 0; }
+  to { top: 100%; }
+}
+
+.terminal-cursor::after {
+  content: '_';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #040505;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+
+.brutalist-border {
+  border: 1px solid #040505;
+}
+
+.dashed-bg {
+  background-image: radial-gradient(#040505 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+}
+
+/* Base resets & utilities to keep consistent font weights and layout styles */
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom lists */
+.technical-arrow-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+.technical-arrow-list li::before {
+  content: "->";
+  position: absolute;
+  left: 0;
+  font-family: "JetBrains Mono", monospace;
+  color: var(--color-primary);
+}
