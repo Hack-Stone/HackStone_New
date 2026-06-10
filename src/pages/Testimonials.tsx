@@ -59,24 +59,24 @@ export default function Testimonials() {
       <section className="border-b border-primary bg-primary text-on-primary text-left">
         <div className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-outline">
           <div className="p-stack-lg group hover:bg-syntax-lime hover:text-primary transition-colors cursor-default">
-            <div className="font-ui-label text-ui-label mb-stack-sm font-bold">DEPL_CYCLE_OPTIMIZATION</div>
-            <div className="font-display-lg text-display-lg font-extrabold">-40%</div>
-            <div className="font-code-sm text-code-sm opacity-70 font-medium">CI/CD pipeline latency reduction observed across enterprise sectors.</div>
+            <div className="font-ui-label text-ui-label mb-stack-sm font-bold">INCIDENT_RESPONSE</div>
+            <div className="font-display-lg text-display-lg font-extrabold">&lt;1 Hour</div>
+            <div className="font-code-sm text-code-sm opacity-70 font-medium">Incident response time for critical production environment alerts.</div>
           </div>
           <div className="p-stack-lg group hover:bg-syntax-lime hover:text-primary transition-colors cursor-default">
-            <div className="font-ui-label text-ui-label mb-stack-sm font-bold">UPTIME_AVAILABILITY</div>
-            <div className="font-display-lg text-display-lg font-extrabold">99.998%</div>
-            <div className="font-code-sm text-code-sm opacity-70 font-medium">Guaranteed infrastructure resilience under peak synthetic load.</div>
+            <div className="font-ui-label text-ui-label mb-stack-sm font-bold">SYSTEM_AVAILABILITY</div>
+            <div className="font-display-lg text-display-lg font-extrabold">99.9%</div>
+            <div className="font-code-sm text-code-sm opacity-70 font-medium">Service availability across all client production infrastructures.</div>
           </div>
           <div className="p-stack-lg group hover:bg-syntax-lime hover:text-primary transition-colors cursor-default">
-            <div className="font-ui-label text-ui-label mb-stack-sm font-bold">THREAT_MITIGATION</div>
-            <div className="font-display-lg text-display-lg font-extrabold">100%</div>
-            <div className="font-code-sm text-code-sm opacity-70 font-medium">Zero bypasses recorded during Q3 independent security audits.</div>
+            <div className="font-ui-label text-ui-label mb-stack-sm font-bold">DEPLOYMENT_EFFICIENCY</div>
+            <div className="font-display-lg text-display-lg font-extrabold">40%</div>
+            <div className="font-code-sm text-code-sm opacity-70 font-medium">Increase in deployment velocity and integration testing cycle speed.</div>
           </div>
           <div className="p-stack-lg group hover:bg-syntax-lime hover:text-primary transition-colors cursor-default">
-            <div className="font-ui-label text-ui-label mb-stack-sm font-bold">RESOURCE_OVERHEAD</div>
-            <div className="font-display-lg text-display-lg font-extrabold">-22%</div>
-            <div className="font-code-sm text-code-sm opacity-70 font-medium">Reduction in unnecessary compute allocation via ERP logic.</div>
+            <div className="font-ui-label text-ui-label mb-stack-sm font-bold">INFRASTRUCTURE_COMPLEXITY</div>
+            <div className="font-display-lg text-display-lg font-extrabold">REDUCED</div>
+            <div className="font-code-sm text-code-sm opacity-70 font-medium">Elimination of redundant server nodes and network configurations.</div>
           </div>
         </div>
       </section>
@@ -84,8 +84,46 @@ export default function Testimonials() {
       {/* Client Cards Bento Grid */}
       <section className="py-section-padding max-w-[1440px] mx-auto px-grid-margin text-left">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter bg-primary border border-primary overflow-hidden">
-          {/* Large Featured Card */}
+          {/* Case Study #01 */}
           <div className="md:col-span-8 bg-background p-stack-lg flex flex-col justify-between border-b md:border-b-0">
+            <div>
+              <span className="material-symbols-outlined text-[48px] text-syntax-lime mb-stack-md">format_quote</span>
+              <h3 className="font-display-lg text-headline-md md:text-[36px] italic leading-tight mb-stack-lg text-primary">
+                "HackStone improved our operational workflow and deployment process."
+              </h3>
+            </div>
+            <div className="flex items-center gap-stack-md border-t border-primary pt-stack-md">
+              <div className="w-16 h-16 bg-primary flex items-center justify-center">
+                <span className="material-symbols-outlined text-on-primary text-3xl">local_shipping</span>
+              </div>
+              <div>
+                <p className="font-ui-label text-ui-label font-bold text-primary">CASE STUDY #01</p>
+                <p className="font-code-sm text-code-sm text-on-surface-variant font-bold">Client — Logistics</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Case Study #02 */}
+          <div className="md:col-span-4 bg-surface-container p-stack-lg flex flex-col justify-between border-l border-primary">
+            <div>
+              <span className="material-symbols-outlined text-[48px] text-syntax-purple mb-stack-md">format_quote</span>
+              <p className="font-body-md text-on-surface mb-stack-lg text-primary italic font-medium">
+                "Migration execution was smooth with minimal operational interruption."
+              </p>
+            </div>
+            <div className="flex items-center gap-stack-md border-t border-primary pt-stack-md">
+              <div className="w-12 h-12 bg-primary flex items-center justify-center">
+                <span className="material-symbols-outlined text-on-primary text-xl">precision_manufacturing</span>
+              </div>
+              <div>
+                <p className="font-ui-label text-ui-label font-bold text-primary">CASE STUDY #02</p>
+                <p className="font-code-sm text-code-sm text-on-surface-variant font-bold">Client — Manufacturing</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Case Study #03 */}
+          <div className="md:col-span-12 bg-background p-stack-lg flex flex-col justify-between border-t border-primary">
             <div>
               <span className="material-symbols-outlined text-[48px] text-syntax-lime mb-stack-md">format_quote</span>
               <h3 className="font-display-lg text-headline-md md:text-[36px] italic leading-tight mb-stack-lg text-primary">
@@ -93,61 +131,12 @@ export default function Testimonials() {
               </h3>
             </div>
             <div className="flex items-center gap-stack-md border-t border-primary pt-stack-md">
-              <img 
-                alt="CTO Profile" 
-                className="w-16 h-16 grayscale border border-primary object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPJk_1FxQp-NhH8SbHCQ8ZSIX2NmejPiWruaKjq-e5C9UKpfftdAkpxZniZc-09Pvj56OWE0VC9NTDbvMg8OuJwTW1pNLNtCVhe_w3S44KhU3lPF0ZW6T8OlcQJS20sza_muQCe4trkGY4mPtAxnykpsUpqkZaEyv49z_DsGS3y2_tLT8DFpTp8e0VT2vsKZJ-TZD3kprPZ_JwJu_hia167eP0BpYXHpWa3Z9AQF86aqg4tDWXOenb8qDuQUaFV7ouSmJFoAQ7Lu68"
-              />
-              <div>
-                <p className="font-ui-label text-ui-label font-bold text-primary">MARCUS VANCE</p>
-                <p className="font-code-sm text-code-sm text-on-surface-variant font-bold">CTO, NEXUS INFRASTRUCTURE</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Side Card 1 */}
-          <div className="md:col-span-4 bg-surface-container p-stack-lg flex flex-col justify-between border-l border-primary">
-            <p className="font-body-md text-on-surface mb-stack-lg text-primary">
-              "The security audit was brutal, in the best way. They found vulnerabilities our previous three partners missed."
-            </p>
-            <div className="flex items-center gap-stack-md">
-              <img 
-                alt="Lead Dev" 
-                className="w-12 h-12 grayscale border border-primary object-cover" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6-eoKGwhDmKURmh1opmq4qXRafliD-IGyB-6VkAt6AWZeXts3QSl0QdTFyyp7QuLlcLseBJp4XZCUj_9oNqKW1rm6-GVwhb0W5DGaNHUgWgidRdFKinTZSbbt3PFzhyC_MXrV4ZbNljw55p1u2GuRDsGpUmfVYr6mTjWsx2t0mHLCgqcvwPDnbdk7CCOYC8jTxNvTklJLK_8vKgYNxAkmCzlNCVcZpXOG_FQuUhOvfrTNgWQBqgCKcEzAwyQpU2TWOpybXGdLpMbW"
-              />
-              <div>
-                <p className="font-ui-label text-ui-label font-bold text-primary">SARAH CHEN</p>
-                <p className="font-code-sm text-code-sm text-on-surface-variant font-bold">LEAD SECURITY ENGINEER</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Row Card 1 */}
-          <div className="md:col-span-4 bg-background p-stack-lg border-t border-primary">
-            <p className="font-body-md text-on-surface mb-stack-lg text-primary">
-              "Infrastructure migration was seamless. No downtime, just pure efficiency."
-            </p>
-            <div className="flex items-center gap-stack-md">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                <span className="material-symbols-outlined text-on-primary">terminal</span>
+              <div className="w-16 h-16 bg-primary flex items-center justify-center">
+                <span className="material-symbols-outlined text-on-primary text-3xl">domain</span>
               </div>
               <div>
-                <p className="font-ui-label text-ui-label font-bold text-primary">DEVOPS TEAM</p>
-                <p className="font-code-sm text-code-sm text-on-surface-variant font-bold">GLOBEX CORP</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Row Card 2 */}
-          <div className="md:col-span-8 bg-surface-container-high p-stack-lg border-t border-l border-primary">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
-              <p className="font-body-md text-on-surface italic text-primary">
-                "If you want fluff, go elsewhere. If you want a system that survives a DDoS while processing a million transactions, you hire HackStone."
-              </p>
-              <div className="flex flex-col justify-end">
-                <p className="font-ui-label text-ui-label font-bold text-primary">ALEXEI VOLKOV</p>
-                <p className="font-code-sm text-code-sm text-on-surface-variant font-bold">SYSTEMS ARCHITECT</p>
+                <p className="font-ui-label text-ui-label font-bold text-primary">CASE STUDY #03</p>
+                <p className="font-code-sm text-code-sm text-on-surface-variant font-bold">Client — Infrastructure</p>
               </div>
             </div>
           </div>

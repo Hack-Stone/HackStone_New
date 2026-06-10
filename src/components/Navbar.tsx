@@ -40,13 +40,19 @@ export default function Navbar() {
             to="/testimonials"
             className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
           >
-            Testimonial
+            Case Studies
           </NavLink>
           <NavLink
             to="/about"
             className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
           >
             About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
+          >
+            Contact
           </NavLink>
         </div>
 

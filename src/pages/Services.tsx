@@ -14,13 +14,13 @@ export default function Services() {
         <div className="absolute inset-0 grid-bg -z-10 opacity-5"></div>
         <div className="max-w-[1440px] mx-auto px-grid-margin flex flex-col items-start gap-stack-md">
           <div className="inline-block border border-primary px-3 py-1 font-ui-label text-ui-label bg-syntax-lime text-primary uppercase font-bold">
-            System.Status: Active
+            SYSTEM.STATUS: ACTIVE
           </div>
           <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg max-w-4xl text-primary leading-none uppercase">
             SERVICES: TECHNOLOGY <br /> FOR GROWTH
           </h1>
           <p className="font-code-sm text-code-sm max-w-xl text-on-surface-variant mt-stack-md uppercase font-bold">
-            ENGINEERING HIGH-PERFORMANCE DIGITAL INFRASTRUCTURE FOR THE NEXT GENERATION OF SCALABLE ENTERPRISES. WE ARCHITECT SECURITY, CUSTOM ERP, AND CLOUD SYSTEMS WITH SURGICAL PRECISION.
+            Engineering secure software, enterprise systems, and cloud infrastructure with operational precision.
           </p>
           <div className="mt-stack-lg flex gap-stack-md">
             <a 
@@ -33,7 +33,7 @@ export default function Services() {
               to="/contact" 
               className="border border-primary px-8 py-4 font-ui-label text-ui-label hover:bg-surface-container transition-all text-center bg-transparent text-primary"
             >
-              VIEW AUDITS
+              REQUEST CONSULTATION
             </Link>
           </div>
         </div>
@@ -60,9 +60,9 @@ export default function Services() {
           </div>
           {/* Services Bento Grid */}
           <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2">
-            {/* Cyber Security */}
+            {/* Cybersecurity */}
             <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Cyber Security...')}
+              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Cybersecurity...')}
               className="border-b border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
             >
               <div className="flex justify-between items-start mb-stack-lg">
@@ -71,7 +71,7 @@ export default function Services() {
                 </span>
                 <span className="font-code-sm text-code-sm text-outline">01</span>
               </div>
-              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Cyber Security</h3>
+              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Cybersecurity</h3>
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Security assessments, penetration testing, and zero-trust architecture implementation to protect sensitive assets.
               </p>
@@ -80,9 +80,9 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Software Dev */}
+            {/* Software Engineering */}
             <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Software Dev...')}
+              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Software Engineering...')}
               className="border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
             >
               <div className="flex justify-between items-start mb-stack-lg">
@@ -91,7 +91,7 @@ export default function Services() {
                 </span>
                 <span className="font-code-sm text-code-sm text-outline">02</span>
               </div>
-              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Software Dev</h3>
+              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Software Engineering</h3>
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Custom web applications engineered with modern stacks (React, Rust, Node) for maximum performance and scalability.
               </p>
@@ -100,9 +100,9 @@ export default function Services() {
               </div>
             </div>
 
-            {/* ERP Development */}
+            {/* ERP Systems */}
             <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for ERP Development...')}
+              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for ERP Systems...')}
               className="border-b border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
             >
               <div className="flex justify-between items-start mb-stack-lg">
@@ -111,7 +111,7 @@ export default function Services() {
                 </span>
                 <span className="font-code-sm text-code-sm text-outline">03</span>
               </div>
-              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">ERP Development</h3>
+              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">ERP Systems</h3>
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Internal workflow systems and resource planning tools tailored to your unique operational logic.
               </p>
@@ -120,9 +120,9 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Cloud Solutions */}
+            {/* Cloud & DevOps */}
             <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Cloud Solutions...')}
+              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Cloud & DevOps...')}
               className="border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
             >
               <div className="flex justify-between items-start mb-stack-lg">
@@ -131,7 +131,7 @@ export default function Services() {
                 </span>
                 <span className="font-code-sm text-code-sm text-outline">04</span>
               </div>
-              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Cloud Solutions</h3>
+              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Cloud & DevOps</h3>
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Infrastructure as Code (IaC), AWS/GCP orchestration, and automated CI/CD pipeline deployments.
               </p>
@@ -140,9 +140,9 @@ export default function Services() {
               </div>
             </div>
 
-            {/* IT Consulting */}
+            {/* Technology Consulting */}
             <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for IT Consulting...')}
+              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Technology Consulting...')}
               className="md:col-span-2 border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-surface-container-low hover:bg-surface-container"
             >
               <div className="flex justify-between items-start mb-stack-lg">
@@ -151,7 +151,7 @@ export default function Services() {
                 </span>
                 <span className="font-code-sm text-code-sm text-outline">05</span>
               </div>
-              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">IT Consulting</h3>
+              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Technology Consulting</h3>
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Strategic technical roadmaps and digital transformation audits for growing enterprises requiring legacy modernization.
               </p>

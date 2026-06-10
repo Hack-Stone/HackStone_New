@@ -110,21 +110,40 @@ export default function Products() {
                 </span>
               </div>
               <p className="font-body-md text-on-surface-variant max-w-md mb-8">
-                A modular enterprise resource planning system designed for logistics-heavy operations. Real-time data synthesis across shipping lanes, warehouse stocks, and fleet diagnostics.
+                ShipCore ERP is designed to help logistics and operations teams manage workflows, assets, reporting, and enterprise processes through a secure and scalable platform.
               </p>
+              {/* Product Metadata Area */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-primary pt-6 mt-6 mb-8 text-left">
+                <div>
+                  <div className="font-ui-label text-[10px] text-on-surface-variant uppercase font-bold mb-1">FEATURES</div>
+                  <div className="font-code-sm text-xs text-primary font-bold">Fleet, Warehouse, Analytics, Automation</div>
+                </div>
+                <div>
+                  <div className="font-ui-label text-[10px] text-on-surface-variant uppercase font-bold mb-1">USE CASES</div>
+                  <div className="font-code-sm text-xs text-primary font-bold">Logistics, Manufacturing, Infrastructure</div>
+                </div>
+                <div>
+                  <div className="font-ui-label text-[10px] text-on-surface-variant uppercase font-bold mb-1">INTEGRATIONS</div>
+                  <div className="font-code-sm text-xs text-primary font-bold">APIs, Webhooks, Legacy ERPs</div>
+                </div>
+                <div>
+                  <div className="font-ui-label text-[10px] text-on-surface-variant uppercase font-bold mb-1">DEPLOYMENT OPTIONS</div>
+                  <div className="font-code-sm text-xs text-primary font-bold">Cloud, Hybrid, On-Premise</div>
+                </div>
+              </div>
             </div>
             <div className="flex gap-stack-md">
               <Link 
                 to="/contact" 
                 className="bg-primary text-on-primary px-4 py-2 font-ui-label text-ui-label brutalist-border hover:bg-syntax-purple text-center"
               >
-                LAUNCH_SHIPCORE
+                BOOK DEMO
               </Link>
               <a 
                 href="#deepdive" 
                 className="px-4 py-2 font-ui-label text-ui-label brutalist-border hover:bg-primary hover:text-white transition-all text-center bg-transparent text-primary"
               >
-                DOCUMENTATION
+                VIEW PRODUCT
               </a>
             </div>
           </div>
@@ -223,22 +242,22 @@ export default function Products() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-stack-md">
           <div className="brutalist-border p-6 bg-background hover:translate-y-[-4px] transition-transform">
             <span className="material-symbols-outlined text-primary mb-4">dashboard_customize</span>
-            <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Modern Dashboard</h4>
+            <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Fleet Management</h4>
             <p className="font-code-sm text-on-surface-variant">Highly modular UI components for bespoke operational views.</p>
           </div>
           <div className="brutalist-border p-6 bg-background hover:translate-y-[-4px] transition-transform">
             <span className="material-symbols-outlined text-primary mb-4">location_on</span>
-            <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Real-Time Tracking</h4>
+            <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Warehouse Operations</h4>
             <p className="font-code-sm text-on-surface-variant">Sub-second latency for global asset monitoring across all regions.</p>
           </div>
           <div className="brutalist-border p-6 bg-background hover:translate-y-[-4px] transition-transform">
             <span className="material-symbols-outlined text-primary mb-4">assessment</span>
-            <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Automated Reports</h4>
+            <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Analytics</h4>
             <p className="font-code-sm text-on-surface-variant">Daily PDF/JSON summaries of supply chain health and KPI metrics.</p>
           </div>
           <div className="brutalist-border p-6 bg-background hover:translate-y-[-4px] transition-transform">
             <span className="material-symbols-outlined text-primary mb-4">lan</span>
-            <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Scalable Infra</h4>
+            <h4 className="font-ui-label text-ui-label mb-2 text-primary font-bold">Workflow Automation</h4>
             <p className="font-code-sm text-on-surface-variant">Containerized microservices designed for elastic load handling.</p>
           </div>
         </div>

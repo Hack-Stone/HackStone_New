@@ -38,6 +38,85 @@ export default function About() {
         </div>
       </section>
 
+      {/* Founder Section */}
+      <section className="grid grid-cols-1 md:grid-cols-12 gap-gutter border-b border-primary bg-background text-left">
+        {/* Founder Image & Metadata */}
+        <div className="md:col-span-4 p-grid-margin bg-background border-b md:border-b-0 md:border-r border-primary flex flex-col justify-between">
+          <div className="flex flex-col items-center md:items-start">
+            <div className="w-48 h-48 rounded-full border border-primary overflow-hidden mb-6 bg-surface-container">
+              <img 
+                src="/src/assets/founder.png" 
+                alt="Dhairya Pithadia" 
+                className="w-full h-full object-cover grayscale" 
+              />
+            </div>
+            {/* Metadata Area */}
+            <div className="w-full space-y-2 font-code-sm text-code-sm border-t border-primary pt-4 mt-4">
+              <div className="flex justify-between">
+                <span className="text-on-surface-variant font-bold">STATUS:</span>
+                <span className="text-primary font-bold">ACTIVE</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-on-surface-variant font-bold">MODE:</span>
+                <span className="text-primary font-bold">BUILDING</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-on-surface-variant font-bold">INIT:</span>
+                <span className="text-primary font-bold">2024</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-on-surface-variant font-bold">MISSION:</span>
+                <span className="text-primary font-bold">SECURE SYSTEMS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Founder Content */}
+        <div className="md:col-span-8 p-grid-margin bg-background flex flex-col justify-between">
+          <div>
+            <div className="mb-stack-lg">
+              <span className="font-code-sm text-code-sm uppercase tracking-widest text-on-surface-variant font-bold">
+                [ 01.5_FOUNDER_RECORD ]
+              </span>
+            </div>
+            
+            <div className="mb-6">
+              <div className="font-ui-label text-ui-label text-on-surface-variant uppercase font-bold mb-1">FOUNDER</div>
+              <h2 className="font-display-lg text-headline-md md:text-display-lg uppercase leading-none text-primary mb-1">
+                DHAIRYA PITHADIA
+              </h2>
+              <div className="font-code-sm text-code-sm text-syntax-purple font-bold">Founder • HackStone</div>
+            </div>
+
+            <blockquote className="font-display-lg text-headline-md italic leading-tight text-primary mb-6 max-w-xl">
+              "Technology should not force businesses to choose between speed and security."
+            </blockquote>
+
+            <p className="font-body-md text-body-md max-w-xl text-on-surface-variant font-medium">
+              HackStone exists to engineer secure software, ERP systems, and scalable infrastructure built with operational rigor.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-primary text-on-primary px-6 py-3 font-ui-label text-ui-label border border-primary hover:bg-syntax-lime hover:text-primary transition-all text-center"
+            >
+              LINKEDIN
+            </a>
+            <a 
+              href="/contact" 
+              className="border border-primary px-6 py-3 font-ui-label text-ui-label hover:bg-surface-container transition-all text-center bg-transparent text-primary"
+            >
+              CONTACT
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Values Bento Grid */}
       <section className="border-b border-primary text-left">
         <div className="p-4 border-b border-primary bg-surface-container-high text-primary font-bold">
@@ -92,33 +171,33 @@ export default function About() {
           <div className="flex flex-col">
             <div className="p-grid-margin border-b border-primary hover:bg-surface-container transition-colors">
               <div className="flex items-start gap-stack-md">
-                <span className="font-ui-label text-headline-md text-primary font-bold">2018</span>
+                <span className="font-ui-label text-headline-md text-primary font-bold">2024</span>
                 <div>
-                  <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">GENESIS</h4>
+                  <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">HackStone Founded</h4>
                   <p className="font-body-md text-body-md text-on-surface-variant font-medium">
-                    Founded by a team of ethical hackers and systems architects frustrated with "fast-and-loose" development cultures.
+                    Established with a mission to engineer secure software, ERP systems, and scalable infrastructure built with operational rigor.
                   </p>
                 </div>
               </div>
             </div>
             <div className="p-grid-margin border-b border-primary hover:bg-surface-container transition-colors">
               <div className="flex items-start gap-stack-md">
-                <span className="font-ui-label text-headline-md text-primary font-bold">2020</span>
+                <span className="font-ui-label text-headline-md text-primary font-bold">2025</span>
                 <div>
-                  <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">KERNEL RELEASE</h4>
+                  <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">First Enterprise Deployment</h4>
                   <p className="font-body-md text-body-md text-on-surface-variant font-medium">
-                    Launch of our proprietary ERP security kernel, setting new industry benchmarks for zero-trust architecture.
+                    Hardening operational processes and shipping production ERP applications to early enterprise partners.
                   </p>
                 </div>
               </div>
             </div>
             <div className="p-grid-margin border-b border-primary hover:bg-surface-container transition-colors">
               <div className="flex items-start gap-stack-md">
-                <span className="font-ui-label text-headline-md text-primary font-bold">2022</span>
+                <span className="font-ui-label text-headline-md text-primary font-bold">2026</span>
                 <div>
-                  <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">GLOBAL NODE EXPANSION</h4>
+                  <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">ShipCore Launch</h4>
                   <p className="font-body-md text-body-md text-on-surface-variant font-medium">
-                    Expansion into distributed cloud security, providing hardened DevOps pipelines to Fortune 500 partners.
+                    General release of our flagship logistics and operational resource planning engine.
                   </p>
                 </div>
               </div>
@@ -127,9 +206,9 @@ export default function About() {
               <div className="flex items-start gap-stack-md">
                 <span className="font-ui-label text-headline-md text-primary font-bold">PRESENT</span>
                 <div>
-                  <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">SYSTEM STABILITY</h4>
+                  <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">Continuous Expansion</h4>
                   <p className="font-body-md text-body-md text-on-surface-variant font-medium">
-                    Continuously evolving to counter emerging threat vectors with proactive, AI-driven defense mechanisms.
+                    Scaling engineering support and capabilities for highly integrated global digital infrastructure networks.
                   </p>
                 </div>
               </div>

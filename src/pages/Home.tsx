@@ -15,13 +15,16 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-stack-lg items-center">
           <div className="md:col-span-8 space-y-stack-md text-left">
             <span className="font-code-sm text-code-sm bg-syntax-lime px-2 py-1 border border-primary uppercase tracking-widest text-primary font-bold">
-              Status: Ready
+              STATUS: READY
             </span>
             <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg uppercase leading-none text-primary">
-              ENGINEERING SECURE INFRASTRUCTURE
+              BUILD SECURE DIGITAL INFRASTRUCTURE
             </h1>
+            <div className="font-ui-label text-ui-label text-primary dark:text-syntax-lime font-bold uppercase tracking-wider my-stack-sm">
+              Cybersecurity • Custom ERP • Cloud Engineering
+            </div>
             <p className="font-body-md text-headline-md max-w-2xl text-on-surface-variant">
-              Build Secure. Scale Faster. We help businesses build secure, scalable, and modern digital systems.
+              We design secure software, enterprise ERP systems, and scalable cloud platforms for growing businesses.
             </p>
             <div className="flex flex-wrap gap-stack-md pt-stack-md">
               <BrutalistButton 
@@ -30,17 +33,17 @@ export default function Home() {
                 size="lg"
                 className="flex items-center gap-2 group"
               >
-                Get Started
+                GET STARTED
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
                   arrow_forward
                 </span>
               </BrutalistButton>
               <BrutalistButton 
-                to="/products" 
+                to="/testimonials" 
                 variant="outline"
                 size="lg"
               >
-                Explore Products
+                VIEW CASE STUDIES
               </BrutalistButton>
             </div>
 
@@ -60,22 +63,22 @@ export default function Home() {
       <section className="max-w-[1440px] mx-auto border-b border-primary bg-background text-left">
         <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-primary">
           <div className="p-grid-margin space-y-2">
-            <div className="font-ui-label text-ui-label text-on-surface-variant uppercase">Uptime Monitoring</div>
-            <div className="font-display-lg text-headline-md font-extrabold text-primary">380,000+ Hours</div>
+            <div className="font-ui-label text-ui-label text-on-surface-variant uppercase">PROJECT DELIVERY</div>
+            <div className="font-display-lg text-headline-md font-extrabold text-primary">10+ Projects Delivered</div>
             <div className="w-full h-1 bg-surface-container overflow-hidden">
               <div className="h-full bg-syntax-lime w-3/4"></div>
             </div>
           </div>
           <div className="p-grid-margin space-y-2">
-            <div className="font-ui-label text-ui-label text-on-surface-variant uppercase">Global Infrastructure</div>
-            <div className="font-display-lg text-headline-md font-extrabold text-primary">4,400+ Systems</div>
+            <div className="font-ui-label text-ui-label text-on-surface-variant uppercase">SERVICE LEVEL</div>
+            <div className="font-display-lg text-headline-md font-extrabold text-primary">99.9% Service Availability</div>
             <div className="w-full h-1 bg-surface-container overflow-hidden">
               <div className="h-full bg-syntax-purple w-1/2"></div>
             </div>
           </div>
           <div className="p-grid-margin space-y-2">
-            <div className="font-ui-label text-ui-label text-on-surface-variant uppercase">Verified Integrity</div>
-            <div className="font-display-lg text-headline-md font-extrabold text-primary">5M+ Lines of Code</div>
+            <div className="font-ui-label text-ui-label text-on-surface-variant uppercase">OPERATIONAL ASSISTANCE</div>
+            <div className="font-display-lg text-headline-md font-extrabold text-primary">24/7 Technical Support</div>
             <div className="w-full h-1 bg-surface-container overflow-hidden">
               <div className="h-full bg-primary w-5/6"></div>
             </div>
@@ -100,7 +103,7 @@ export default function Home() {
             </div>
             <h3 className="font-headline-md uppercase mb-2 text-primary group-hover:text-on-primary">Cyber Security</h3>
             <p className="font-body-md text-on-surface-variant group-hover:text-on-primary-container mb-stack-md">
-              Military-grade encryption and real-time threat detection protocols for critical assets.
+              Industry-standard encryption, zero-trust security, and continuous monitoring for critical assets.
             </p>
             <Link 
               to="/services" 
@@ -169,13 +172,20 @@ export default function Home() {
                 <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> AI-Driven Inventory Logistics
               </li>
             </ul>
-            <div className="pt-stack-md">
+            <div className="flex flex-wrap gap-stack-md pt-stack-md">
               <BrutalistButton 
-                to="/products" 
+                to="/contact" 
                 variant="primary"
                 size="lg"
               >
-                Configure Instance
+                BOOK DEMO
+              </BrutalistButton>
+              <BrutalistButton 
+                to="/products" 
+                variant="outline"
+                size="lg"
+              >
+                VIEW PRODUCT
               </BrutalistButton>
             </div>
 

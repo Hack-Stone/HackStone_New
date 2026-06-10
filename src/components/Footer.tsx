@@ -10,63 +10,57 @@ export default function Footer() {
             HackStone
           </div>
           <p className="font-body-md text-on-surface-variant dark:text-on-primary-container max-w-xs">
-            Specialized infrastructure engineering for the modern decentralized enterprise.
+            Specialized infrastructure engineering for secure and scalable digital systems.
           </p>
         </div>
 
-        {/* Solutions Links */}
+        {/* Solutions & Info Links */}
         <div className="md:col-span-2 text-left">
           <h4 className="font-ui-label text-ui-label uppercase mb-stack-md text-primary dark:text-on-primary font-bold">
-            Solutions
+            Company
           </h4>
           <ul className="space-y-2">
             <li>
               <Link 
-                to="/services" 
+                to="/contact" 
                 className="font-code-sm text-code-sm text-on-surface-variant dark:text-on-primary-container hover:text-syntax-purple transition-colors block hover:translate-x-1 transition-transform"
               >
-                Security Audit
+                Contact
               </Link>
             </li>
             <li>
-              <Link 
-                to="/products" 
+              <a 
+                href="https://linkedin.com" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-code-sm text-code-sm text-on-surface-variant dark:text-on-primary-container hover:text-syntax-purple transition-colors block hover:translate-x-1 transition-transform"
               >
-                Custom ERP
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/services" 
-                className="font-code-sm text-code-sm text-on-surface-variant dark:text-on-primary-container hover:text-syntax-purple transition-colors block hover:translate-x-1 transition-transform"
-              >
-                Infrastructure
-              </Link>
+                LinkedIn
+              </a>
             </li>
           </ul>
         </div>
 
-        {/* Compliance / Resources Links */}
+        {/* Legal Links */}
         <div className="md:col-span-2 text-left">
           <h4 className="font-ui-label text-ui-label uppercase mb-stack-md text-primary dark:text-on-primary font-bold">
-            Resources
+            Legal
           </h4>
           <ul className="space-y-2">
             <li>
-              <Link 
-                to="/testimonials" 
+              <a 
+                href="#terms" 
                 className="font-code-sm text-code-sm text-on-surface-variant dark:text-on-primary-container hover:text-syntax-purple transition-colors block hover:translate-x-1 transition-transform"
               >
-                System Status
-              </Link>
+                Terms
+              </a>
             </li>
             <li>
               <a 
                 href="#privacy" 
                 className="font-code-sm text-code-sm text-on-surface-variant dark:text-on-primary-container hover:text-syntax-purple transition-colors block hover:translate-x-1 transition-transform"
               >
-                Privacy Policy
+                Privacy
               </a>
             </li>
           </ul>
@@ -79,8 +73,9 @@ export default function Footer() {
             <span className="material-symbols-outlined text-primary dark:text-on-primary hover:opacity-85 cursor-pointer">hub</span>
             <span className="material-symbols-outlined text-primary dark:text-on-primary hover:opacity-85 cursor-pointer">shield</span>
           </div>
-          <div className="font-code-sm text-code-sm text-on-surface-variant dark:text-on-primary-container mt-stack-lg">
-            © {new Date().getFullYear()} HACKSTONE. TERMINAL_STATUS: SECURE
+          <div className="font-code-sm text-code-sm text-on-surface-variant dark:text-on-primary-container mt-stack-lg text-left md:text-right">
+            <div>© 2026 HackStone Technologies</div>
+            <div>Built in India</div>
           </div>
         </div>
       </div>
