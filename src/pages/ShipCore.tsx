@@ -346,7 +346,7 @@ export default function ShipCore() {
       </section>
 
       {/* SECTION 07 — METRICS */}
-      <section className="p-grid-margin border-b border-primary bg-background text-left">
+      <section id="version-history" className="p-grid-margin border-b border-primary bg-background text-left">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-primary border-t border-b border-primary py-8">
             <div className="flex flex-col items-start p-4 space-y-2">

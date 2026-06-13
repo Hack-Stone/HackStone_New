@@ -156,39 +156,48 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-stack-lg">
           <div className="md:col-span-5 flex flex-col justify-center space-y-stack-md">
             <span className="font-code-sm text-code-sm border border-primary px-2 py-1 w-fit bg-primary text-on-primary">
-              v4.2.0-STABLE
+              V1.0.0_ACTIVE
             </span>
             <h2 className="font-display-lg text-display-lg uppercase leading-none text-primary">ShipCore ERP</h2>
-            <p className="font-body-md text-on-surface-variant">
-              Our flagship enterprise engine. Designed for companies that demand absolute reliability and real-time synchronization across continents.
+            <p className="font-body-md text-on-surface-variant space-y-2">
+              LOGISTICS ERP. BUILT FOR OPERATIONS.
+              <br /><br />
+              Manage CMR, billing, zone pricing, shipment workflows, and tracking from one unified desktop platform.
+              <br /><br />
+              Offline-first today. Cloud capabilities coming in future releases.
             </p>
             <ul className="space-y-2 font-ui-label text-ui-label uppercase text-primary font-bold">
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> Cloud-Native Architecture
+                <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> CMR MANAGEMENT
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> Zero-Trust Security Model
+                <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> BILLING SYSTEM
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> AI-Driven Inventory Logistics
+                <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> ZONE-WISE PRICING
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> SHIPMENT TRACKING
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-syntax-lime border border-primary"></span> OFFLINE DESKTOP ERP
               </li>
             </ul>
             <div className="flex flex-wrap gap-stack-md pt-stack-md">
               <BrutalistButton 
-                to="/contact" 
+                to="/contact?service=ShipCore" 
                 variant="primary"
                 size="lg"
               >
                 BOOK DEMO
               </BrutalistButton>
               <BrutalistButton 
-                to="/products/shipcore" 
+                to="/products/shipcore#version-history" 
                 variant="outline"
                 size="lg"
               >
-                VIEW PRODUCT
+                PRODUCT UPDATES
               </BrutalistButton>
-
             </div>
 
           </div>
@@ -206,7 +215,7 @@ export default function Home() {
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAje__iINqHef1IJLbkPwcCSbpmlyHG8M5SK4S73LyamVNWBIqfDml4yq1RxAp2dcljqrJBRL0BHeVVwykw2QKnPK-_dT4SS8zgogakBfIVOjsV1UOuNirNRf_trPbqnEKSzx1CQGtU4O6oiSShKTMMNvWQq9aqWA8mTv6IP4TUBRf98F5emEm7vVcvS7eMi8Y5O6Dl31bNhMmqio0zK2v3gBFX6EZZPTA-ZWAZRbO0CXyDOuFU6UqhP2ojNuETFJMBggAOazJY6AiY"
               />
               <div className="absolute -bottom-4 -right-4 bg-syntax-lime text-primary p-4 font-code-sm text-code-sm border border-primary font-bold">
-                // SECURED BY HACKSTONE_SHIELD
+                // SHIPCORE_V1.0.0_OFFLINE
               </div>
             </div>
           </div>
@@ -218,11 +227,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center space-y-stack-lg flex flex-col items-center">
           <span className="material-symbols-outlined text-display-lg text-syntax-lime">format_quote</span>
           <blockquote className="font-display-lg text-headline-md md:text-display-lg italic leading-tight">
-            "HackStone didn't just build our infrastructure; they engineered a fortress. Our deployment velocity increased by 40% while maintaining absolute security integrity."
+            "ShipCore reduced manual shipment coordination and simplified billing workflows across daily operations."
           </blockquote>
           <div className="flex flex-col items-center gap-2">
-            <div className="font-headline-md font-bold text-on-primary">Marcus Thorne</div>
-            <div className="font-ui-label text-ui-label uppercase text-syntax-purple">CTO, Vanguard Global Systems</div>
+            <div className="font-headline-md font-bold text-on-primary">— Logistics Operations Team</div>
           </div>
         </div>
       </section>
@@ -231,17 +239,17 @@ export default function Home() {
       <section className="max-w-[1440px] mx-auto px-grid-margin py-section-padding text-center bg-background">
         <div className="border-2 border-primary p-stack-lg md:p-section-padding space-y-stack-md relative overflow-hidden group">
           <div className="absolute inset-0 bg-syntax-lime opacity-0 group-hover:opacity-5 transition-opacity pointer-events-none"></div>
-          <h2 className="font-display-lg text-display-lg uppercase text-primary">READY TO INITIALIZE?</h2>
+          <h2 className="font-display-lg text-display-lg uppercase text-primary">READY TO SCALE OPERATIONS?</h2>
           <p className="font-body-md text-headline-md max-w-xl mx-auto text-on-surface-variant">
-            Secure your digital future with HackStone's expert engineering team.
+            See ShipCore in action and explore upcoming capabilities.
           </p>
           <div className="flex justify-center gap-stack-md pt-stack-md">
             <BrutalistButton 
-              to="/contact" 
+              to="/contact?service=ShipCore" 
               variant="primary"
               size="xl"
             >
-              Launch Project
+              BOOK SHIPCORE DEMO
             </BrutalistButton>
           </div>
 

@@ -10,12 +10,19 @@ export default function Contact() {
   const [serviceRequired, setServiceRequired] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     const service = params.get('service');
-    if (service === 'shipcore' || service === 'erp') {
+    if (service?.toLowerCase() === 'shipcore' || service?.toLowerCase() === 'erp') {
       return 'ERP Systems';
     }
     return 'Cybersecurity';
   });
-  const [projectType, setProjectType] = useState('New Project');
+  const [projectType, setProjectType] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const project = params.get('project');
+    if (project?.toLowerCase() === 'demo') {
+      return 'Consultation';
+    }
+    return 'New Project';
+  });
   const [projectTimeline, setProjectTimeline] = useState('ASAP');
   const [budget, setBudget] = useState('Under $10k');
   const [meetingDate, setMeetingDate] = useState<Date | null>(null);

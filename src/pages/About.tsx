@@ -44,10 +44,10 @@ export default function About() {
         <div className="md:col-span-4 p-grid-margin bg-background border-b md:border-b-0 md:border-r border-primary flex flex-col justify-between">
           <div className="flex flex-col items-center md:items-start">
             <div className="w-48 h-48 rounded-full border border-primary overflow-hidden mb-6 bg-surface-container">
-              <img 
-                src="/src/assets/founder.png" 
-                alt="Dhairya Pithadia" 
-                className="w-full h-full object-cover grayscale" 
+              <img
+                src="/src/assets/founder.png"
+                alt="Dhairya Pithadia"
+                className="w-full h-full object-cover grayscale"
               />
             </div>
             {/* Metadata Area */}
@@ -62,7 +62,7 @@ export default function About() {
               </div>
               <div className="flex justify-between">
                 <span className="text-on-surface-variant font-bold">INIT:</span>
-                <span className="text-primary font-bold">2024</span>
+                <span className="text-primary font-bold">2025</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-on-surface-variant font-bold">MISSION:</span>
@@ -80,7 +80,7 @@ export default function About() {
                 [ 01.5_FOUNDER_RECORD ]
               </span>
             </div>
-            
+
             <div className="mb-6">
               <div className="font-ui-label text-ui-label text-on-surface-variant uppercase font-bold mb-1">FOUNDER</div>
               <h2 className="font-display-lg text-headline-md md:text-display-lg uppercase leading-none text-primary mb-1">
@@ -99,16 +99,16 @@ export default function About() {
           </div>
 
           <div className="flex flex-wrap gap-4 mt-8">
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.linkedin.com/in/dhairya-pithadia/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary text-on-primary px-6 py-3 font-ui-label text-ui-label border border-primary hover:bg-syntax-lime hover:text-primary transition-all text-center"
             >
               LINKEDIN
             </a>
-            <a 
-              href="/contact" 
+            <a
+              href="/contact"
               className="border border-primary px-6 py-3 font-ui-label text-ui-label hover:bg-surface-container transition-all text-center bg-transparent text-primary"
             >
               CONTACT
@@ -160,8 +160,8 @@ export default function About() {
           <span className="font-code-sm text-code-sm block mb-stack-md text-primary font-bold">[ 03_EVOLUTION_LOG ]</span>
           <h2 className="font-display-lg text-headline-md mb-stack-md text-primary font-bold">THE HACKSTONE STORY</h2>
           <div className="w-full h-[200px] bg-surface-container-highest border border-primary relative overflow-hidden">
-            <img 
-              className="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" 
+            <img
+              className="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuA25zU3yuJeEjWH1xjJe3-3umqpzhzU2sTotjZrJ7Zj6ZKMJGBfgTyz7d5VaoZhen2UdmOcPCJ8a8qbg10A6-pb6PxhXbL7BhocP65CYg67cBcLG6NGItFGtYzJrGjb-l3DT1_QkuwUGwaFlmau2XuWwsfFhz3_oWz6fZoEZYh7Jd0ogCs1labdXvGthopRhck-RwiXnhjM8wRY4YmrEhLSY8IS6ygAS6PKnTaDCu8I0EZJXkRit2ByOxIVa-VRyT7TXfr__48dxN3X"
               alt="Server hardware background"
             />
@@ -171,7 +171,7 @@ export default function About() {
           <div className="flex flex-col">
             <div className="p-grid-margin border-b border-primary hover:bg-surface-container transition-colors">
               <div className="flex items-start gap-stack-md">
-                <span className="font-ui-label text-headline-md text-primary font-bold">2024</span>
+                <span className="font-ui-label text-headline-md text-primary font-bold">2025</span>
                 <div>
                   <h4 className="font-headline-md text-headline-md mb-2 text-primary font-bold">HackStone Founded</h4>
                   <p className="font-body-md text-body-md text-on-surface-variant font-medium">
