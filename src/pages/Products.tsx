@@ -139,12 +139,12 @@ export default function Products() {
               >
                 BOOK DEMO
               </Link>
-              <a 
-                href="#deepdive" 
+              <Link 
+                to="/products/shipcore" 
                 className="px-4 py-2 font-ui-label text-ui-label brutalist-border hover:bg-primary hover:text-white transition-all text-center bg-transparent text-primary"
               >
                 VIEW PRODUCT
-              </a>
+              </Link>
             </div>
           </div>
           {/* VaultGate */}

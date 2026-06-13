@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Services from './pages/Services';
 import Testimonials from './pages/Testimonials';
+import ShipCore from './pages/ShipCore';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/shipcore" element={<ShipCore />} />
           <Route path="/services" element={<Services />} />
           <Route path="/testimonials" element={<Testimonials />} />
         </Routes>

@@ -182,12 +182,13 @@ export default function Home() {
                 BOOK DEMO
               </BrutalistButton>
               <BrutalistButton 
-                to="/products" 
+                to="/products/shipcore" 
                 variant="outline"
                 size="lg"
               >
                 VIEW PRODUCT
               </BrutalistButton>
+
             </div>
 
           </div>
