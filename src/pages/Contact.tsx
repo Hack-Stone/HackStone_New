@@ -5,10 +5,12 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function Contact() {
   const [fullName, setFullName] = useState('');
   const [workEmail, setWorkEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [company, setCompany] = useState('');
   const [serviceRequired, setServiceRequired] = useState('Cybersecurity');
   const [projectType, setProjectType] = useState('New Project');
   const [projectTimeline, setProjectTimeline] = useState('ASAP');
+  const [budget, setBudget] = useState('Under $10k');
   const [meetingDate, setMeetingDate] = useState<Date | null>(null);
   const [meetingTime, setMeetingTime] = useState('09:00 AM');
   const [projectDetails, setProjectDetails] = useState('');
@@ -55,8 +57,20 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName || !workEmail || !serviceRequired || !meetingDate || !meetingTime || !projectDetails) {
+    if (!fullName || !workEmail || !phoneNumber || !serviceRequired || !meetingDate || !meetingTime || !projectDetails) {
       setStatusMsg('VALIDATION_ERROR: Missing required fields.');
+      return;
+    }
+
+    const phoneRegex = /^[+]?[0-9\s\-()]+$/;
+    if (!phoneRegex.test(phoneNumber)) {
+      setStatusMsg('VALIDATION_ERROR: Invalid phone number format.');
+      return;
+    }
+
+    const digitCount = phoneNumber.replace(/\D/g, '').length;
+    if (digitCount < 8 || digitCount > 15) {
+      setStatusMsg('VALIDATION_ERROR: Phone number must contain between 8 and 15 digits.');
       return;
     }
 
@@ -67,10 +81,12 @@ export default function Contact() {
     const emailPayload = `
 FULL_NAME: ${fullName}
 WORK_EMAIL: ${workEmail}
+PHONE_NUMBER: ${phoneNumber}
 COMPANY: ${company || 'N/A'}
 SERVICE_REQUIRED: ${serviceRequired}
 PROJECT_TYPE: ${projectType || 'N/A'}
 PROJECT_TIMELINE: ${projectTimeline || 'N/A'}
+BUDGET: ${budget || 'N/A'}
 MEETING_DATE: ${meetingDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}
 MEETING_TIME: ${meetingTime}
 PROJECT_DETAILS: ${projectDetails}
@@ -85,10 +101,12 @@ PROJECT_DETAILS: ${projectDetails}
       // Reset form
       setFullName('');
       setWorkEmail('');
+      setPhoneNumber('');
       setCompany('');
       setServiceRequired('Cybersecurity');
       setProjectType('New Project');
       setProjectTimeline('ASAP');
+      setBudget('Under $10k');
       setMeetingDate(null);
       setMeetingTime('09:00 AM');
       setProjectDetails('');
@@ -141,8 +159,9 @@ PROJECT_DETAILS: ${projectDetails}
               </div>
             </div>
           ) : (
-            <form className="space-y-stack-md" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* ROW 1 */}
                 <div className="space-y-1">
                   <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
                     FULL_NAME *
@@ -169,9 +188,26 @@ PROJECT_DETAILS: ${projectDetails}
                     required
                   />
                 </div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                {/* ROW 2 */}
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    PHONE_NUMBER *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    placeholder="+91 98765 43210"
+                    autoComplete="tel"
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
+                    required
+                  />
+                  <div className="font-code-sm text-[11px] text-on-surface-variant mt-1">
+                    Used only for project discussion.
+                  </div>
+                </div>
                 <div className="space-y-1">
                   <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
                     COMPANY
@@ -184,6 +220,8 @@ PROJECT_DETAILS: ${projectDetails}
                     className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
                   />
                 </div>
+
+                {/* ROW 3 */}
                 <div className="space-y-1">
                   <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
                     SERVICE_REQUIRED *
@@ -209,9 +247,6 @@ PROJECT_DETAILS: ${projectDetails}
                     <option value="Technology Consulting">Technology Consulting</option>
                   </select>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
                 <div className="space-y-1">
                   <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
                     PROJECT_TYPE
@@ -227,6 +262,8 @@ PROJECT_DETAILS: ${projectDetails}
                     <option value="Consultation">Consultation</option>
                   </select>
                 </div>
+
+                {/* ROW 4 */}
                 <div className="space-y-1">
                   <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
                     PROJECT_TIMELINE
@@ -242,9 +279,23 @@ PROJECT_DETAILS: ${projectDetails}
                     <option value="Flexible">Flexible</option>
                   </select>
                 </div>
-              </div>
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    BUDGET
+                  </label>
+                  <select
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none appearance-none text-primary font-medium"
+                  >
+                    <option value="Under $10k">Under $10k</option>
+                    <option value="$10k - $50k">$10k - $50k</option>
+                    <option value="$50k - $100k">$50k - $100k</option>
+                    <option value="$100k+">$100k+</option>
+                  </select>
+                </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                {/* ROW 5 */}
                 <div className="space-y-1">
                   <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
                     MEETING_DATE *
@@ -280,20 +331,21 @@ PROJECT_DETAILS: ${projectDetails}
                     Times shown in your local timezone.
                   </div>
                 </div>
-              </div>
 
-              <div className="space-y-1">
-                <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
-                  PROJECT_DETAILS *
-                </label>
-                <textarea
-                  value={projectDetails}
-                  onChange={(e) => setProjectDetails(e.target.value)}
-                  placeholder={"Tell us about your requirements,\ngoals,\ncurrent challenges,\nand expected outcomes."}
-                  rows={6}
-                  className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
-                  required
-                ></textarea>
+                {/* ROW 6 */}
+                <div className="space-y-1 md:col-span-2">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    PROJECT_DETAILS *
+                  </label>
+                  <textarea
+                    value={projectDetails}
+                    onChange={(e) => setProjectDetails(e.target.value)}
+                    placeholder={"Tell us about your requirements,\ngoals,\ncurrent challenges,\nand expected outcomes."}
+                    rows={6}
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
+                    required
+                  ></textarea>
+                </div>
               </div>
 
               {statusMsg && (
@@ -302,6 +354,7 @@ PROJECT_DETAILS: ${projectDetails}
                 </div>
               )}
 
+              {/* ROW 7 */}
               <button
                 type="submit"
                 disabled={isSubmitting}
