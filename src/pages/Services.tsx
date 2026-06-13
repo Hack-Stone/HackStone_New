@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import servicesIllustration from '../assets/services_illustration.png';
 
 export default function Services() {
   useEffect(() => {
@@ -53,8 +54,8 @@ export default function Services() {
             <div className="mt-stack-lg">
               <img 
                 alt="Technology Core" 
-                className="w-full grayscale border border-primary" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhN9pjXt7N6OTGC83-BK6z5o7vnbvUD9UwGoZH-C_Pjy-mY-6QgMer-dM_VIebhGOefoNK5KMHz6SdoRwS2vHaAWo7__glcb-mU8sGcJAEVHa0sPWsemgqyAEBLzfXHxUb9dZ0WIQHl4m66fHZfFpEkC0tGnyJGDCZnbZMkQ5brTa6yt5-PrhVM-bZt6kyCksszruTYTrK3PfGLfEU4FswMbPIo2vtqYfD1OqxROt9GT9riUO6X11z9uYWjl4OWSFyFLZBLhf-ZkSs"
+                className="w-full border border-primary" 
+                src={servicesIllustration}
               />
             </div>
           </div>

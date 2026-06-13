@@ -1,10 +1,18 @@
 import { useState, useEffect } from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Contact() {
-  const [identity, setIdentity] = useState('');
-  const [email, setEmail] = useState('');
-  const [protocol, setProtocol] = useState('SYSTEM_SECURITY_AUDIT');
-  const [payload, setPayload] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [workEmail, setWorkEmail] = useState('');
+  const [company, setCompany] = useState('');
+  const [serviceRequired, setServiceRequired] = useState('Cybersecurity');
+  const [projectType, setProjectType] = useState('New Project');
+  const [projectTimeline, setProjectTimeline] = useState('ASAP');
+  const [meetingDate, setMeetingDate] = useState<Date | null>(null);
+  const [meetingTime, setMeetingTime] = useState('09:00 AM');
+  const [projectDetails, setProjectDetails] = useState('');
+
   const [statusMsg, setStatusMsg] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -12,14 +20,33 @@ export default function Contact() {
     document.title = "Contact HackStone | Systems Connectivity";
   }, []);
 
-  // UTC clock sync
+  // Local clock sync
+  const [timeStr, setTimeStr] = useState('');
+  const [timezoneName, setTimezoneName] = useState('');
 
-  const [timeStr, setTimeStr] = useState('12:00:00 UTC');
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
-      const time = now.toISOString().split('T')[1].split('.')[0] + ' UTC';
-      setTimeStr(time);
+
+      // Get timezone short name (e.g., IST, EST)
+      const tzShort = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' })
+        .formatToParts(now)
+        .find(part => part.type === 'timeZoneName')?.value || '';
+
+      // Format 12-hour time: HH:MM:SS AM/PM
+      let hour = now.getHours();
+      const ampm = hour >= 12 ? 'PM' : 'AM';
+      hour = hour % 12;
+      hour = hour ? hour : 12;
+      const hh = String(hour).padStart(2, '0');
+      const mm = String(now.getMinutes()).padStart(2, '0');
+      const ss = String(now.getSeconds()).padStart(2, '0');
+
+      setTimeStr(`${hh}:${mm}:${ss} ${ampm} ${tzShort}`);
+
+      // Get timezone full name (e.g., Asia/Kolkata)
+      const tzFull = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      setTimezoneName(tzFull);
     };
     updateClock();
     const interval = setInterval(updateClock, 1000);
@@ -28,22 +55,43 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!identity || !email || !payload) {
+    if (!fullName || !workEmail || !serviceRequired || !meetingDate || !meetingTime || !projectDetails) {
       setStatusMsg('VALIDATION_ERROR: Missing required fields.');
       return;
     }
-    
+
     setIsSubmitting(true);
     setStatusMsg(null);
+
+    // Format the email payload containing the specified fields
+    const emailPayload = `
+FULL_NAME: ${fullName}
+WORK_EMAIL: ${workEmail}
+COMPANY: ${company || 'N/A'}
+SERVICE_REQUIRED: ${serviceRequired}
+PROJECT_TYPE: ${projectType || 'N/A'}
+PROJECT_TIMELINE: ${projectTimeline || 'N/A'}
+MEETING_DATE: ${meetingDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}
+MEETING_TIME: ${meetingTime}
+PROJECT_DETAILS: ${projectDetails}
+    `.trim();
+
+    console.log("Transmitting payload through existing submission flow:", emailPayload);
 
     // Mock transmission delay
     setTimeout(() => {
       setIsSubmitting(false);
       setStatusMsg('TRANSMISSION_SUCCESS: Data payload successfully synchronized with core servers.');
       // Reset form
-      setIdentity('');
-      setEmail('');
-      setPayload('');
+      setFullName('');
+      setWorkEmail('');
+      setCompany('');
+      setServiceRequired('Cybersecurity');
+      setProjectType('New Project');
+      setProjectTimeline('ASAP');
+      setMeetingDate(null);
+      setMeetingTime('09:00 AM');
+      setProjectDetails('');
     }, 1500);
   };
 
@@ -56,11 +104,11 @@ export default function Contact() {
             [ STATUS: READY_TO_INITIATE ]
           </div>
           <h1 className="font-display-lg text-display-lg-mobile md:text-[80px] leading-[0.9] uppercase mb-8 text-primary font-bold">
-            Connect With <br />
-            <span className="text-syntax-purple">Systems</span>
+            Start Your <br />
+            <span className="text-syntax-purple">Project</span>
           </h1>
           <p className="font-body-md text-on-surface-variant max-w-xl font-medium">
-            Bridge the gap between vision and infrastructure. Reach out to our technical architecture team to deploy secure, high-performance solutions.
+            Tell us what you're building and schedule a technical discussion with our team.
           </p>
         </div>
       </section>
@@ -77,85 +125,195 @@ export default function Contact() {
             </p>
           </div>
 
-          <form className="space-y-stack-md" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
-              <div className="space-y-1">
-                <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
-                  User_Identity*
-                </label>
-                <input 
-                  type="text" 
-                  value={identity}
-                  onChange={(e) => setIdentity(e.target.value)}
-                  placeholder="NAME_ENTRY"
-                  className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
-                  required
-                />
+          {statusMsg && statusMsg.startsWith('TRANSMISSION_SUCCESS') ? (
+            <div className="space-y-6 font-code-sm text-left border border-syntax-lime bg-syntax-lime/10 p-8 brutalist-border">
+              <div className="font-ui-label text-ui-label text-secondary mb-2 uppercase tracking-widest font-bold">
+                [ STATUS: REQUEST_RECEIVED ]
               </div>
-              <div className="space-y-1">
-                <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
-                  Communication_Node*
-                </label>
-                <input 
-                  type="email" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="EMAIL@DOMAIN.SYS"
-                  className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
-                  required
-                />
+              <h3 className="font-headline-md text-headline-md uppercase text-primary font-bold">
+                Thank you.
+              </h3>
+              <p className="font-body-md text-on-surface-variant max-w-xl font-medium">
+                Our team will review your request and contact you shortly.
+              </p>
+              <div className="font-code-sm text-code-sm text-secondary border-t border-primary/20 pt-4 font-bold">
+                Meeting request submitted successfully.
               </div>
             </div>
-            <div className="space-y-1">
-              <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
-                Protocol_Type
-              </label>
-              <select 
-                value={protocol}
-                onChange={(e) => setProtocol(e.target.value)}
-                className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none appearance-none text-primary font-medium"
+          ) : (
+            <form className="space-y-stack-md" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    FULL_NAME *
+                  </label>
+                  <input
+                    type="text"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder="Your Name"
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
+                    required
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    WORK_EMAIL *
+                  </label>
+                  <input
+                    type="email"
+                    value={workEmail}
+                    onChange={(e) => setWorkEmail(e.target.value)}
+                    placeholder="name@company.com"
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    COMPANY
+                  </label>
+                  <input
+                    type="text"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    placeholder="Company Name"
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    SERVICE_REQUIRED *
+                  </label>
+                  {/* Optional description mapping (internal only):
+                      Cybersecurity → Security audits, penetration testing, zero-trust
+                      Software Engineering → Custom applications & platforms
+                      Web Development → Business websites, web apps, landing pages, portals
+                      ERP Systems → Workflow & resource planning
+                      Cloud & DevOps → Infrastructure & deployment
+                      Technology Consulting → Architecture & digital strategy */}
+                  <select
+                    value={serviceRequired}
+                    onChange={(e) => setServiceRequired(e.target.value)}
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none appearance-none text-primary font-medium"
+                    required
+                  >
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="ERP Systems">ERP Systems</option>
+                    <option value="Cloud & DevOps">Cloud & DevOps</option>
+                    <option value="Technology Consulting">Technology Consulting</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    PROJECT_TYPE
+                  </label>
+                  <select
+                    value={projectType}
+                    onChange={(e) => setProjectType(e.target.value)}
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none appearance-none text-primary font-medium"
+                  >
+                    <option value="New Project">New Project</option>
+                    <option value="Existing System Upgrade">Existing System Upgrade</option>
+                    <option value="Security Assessment">Security Assessment</option>
+                    <option value="Consultation">Consultation</option>
+                  </select>
+                </div>
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    PROJECT_TIMELINE
+                  </label>
+                  <select
+                    value={projectTimeline}
+                    onChange={(e) => setProjectTimeline(e.target.value)}
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none appearance-none text-primary font-medium"
+                  >
+                    <option value="ASAP">ASAP</option>
+                    <option value="Within 2 Weeks">Within 2 Weeks</option>
+                    <option value="Within 1 Month">Within 1 Month</option>
+                    <option value="Flexible">Flexible</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    MEETING_DATE *
+                  </label>
+                  <DatePicker
+                    selected={meetingDate}
+                    onChange={(date: Date | null) => setMeetingDate(date)}
+                    minDate={new Date()}
+                    placeholderText="SELECT_DATE"
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
+                    required
+                    dateFormat="yyyy-MM-dd"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                    MEETING_TIME *
+                  </label>
+                  <select
+                    value={meetingTime}
+                    onChange={(e) => setMeetingTime(e.target.value)}
+                    className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none appearance-none text-primary font-medium"
+                    required
+                  >
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                  </select>
+                  <div className="font-code-sm text-[11px] text-on-surface-variant mt-1">
+                    Times shown in your local timezone.
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
+                  PROJECT_DETAILS *
+                </label>
+                <textarea
+                  value={projectDetails}
+                  onChange={(e) => setProjectDetails(e.target.value)}
+                  placeholder={"Tell us about your requirements,\ngoals,\ncurrent challenges,\nand expected outcomes."}
+                  rows={6}
+                  className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
+                  required
+                ></textarea>
+              </div>
+
+              {statusMsg && (
+                <div className="p-4 border font-code-sm text-code-sm font-bold bg-error-container border-error text-error">
+                  {statusMsg}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="group flex items-center justify-between w-full md:w-auto px-8 py-4 bg-primary text-on-primary font-ui-label text-ui-label uppercase hover:bg-syntax-lime hover:text-primary transition-all duration-300 disabled:opacity-50"
               >
-                <option value="SYSTEM_SECURITY_AUDIT">SYSTEM_SECURITY_AUDIT</option>
-                <option value="CUSTOM_ERP_INTEGRATION">CUSTOM_ERP_INTEGRATION</option>
-                <option value="INFRASTRUCTURE_SCALING">INFRASTRUCTURE_SCALING</option>
-                <option value="GENERAL_QUERY">GENERAL_QUERY</option>
-              </select>
-            </div>
-            <div className="space-y-1">
-              <label className="font-ui-label text-ui-label uppercase block text-primary font-bold">
-                Data_Payload*
-              </label>
-              <textarea 
-                value={payload}
-                onChange={(e) => setPayload(e.target.value)}
-                placeholder="ENTER_MESSAGE_PARAMETERS..." 
-                rows={6}
-                className="w-full bg-background border border-primary p-3 font-code-sm focus:ring-0 focus:border-syntax-lime outline-none text-primary"
-                required
-              ></textarea>
-            </div>
-
-            {statusMsg && (
-              <div className={`p-4 border font-code-sm text-code-sm font-bold ${
-                statusMsg.startsWith('TRANSMISSION_SUCCESS') 
-                  ? 'bg-syntax-lime/20 border-syntax-lime text-secondary' 
-                  : 'bg-error-container border-error text-error'
-              }`}>
-                {statusMsg}
-              </div>
-            )}
-
-            <button 
-              type="submit"
-              disabled={isSubmitting}
-              className="group flex items-center justify-between w-full md:w-auto px-8 py-4 bg-primary text-on-primary font-ui-label text-ui-label uppercase hover:bg-syntax-lime hover:text-primary transition-all duration-300 disabled:opacity-50"
-            >
-              {isSubmitting ? 'TRANSMITTING...' : 'Transmit Data'}
-              <span className="material-symbols-outlined ml-4 group-hover:translate-x-2 transition-transform">
-                arrow_forward
-              </span>
-            </button>
-          </form>
+                {isSubmitting ? 'TRANSMITTING...' : 'BOOK DISCOVERY CALL'}
+                <span className="material-symbols-outlined ml-4 group-hover:translate-x-2 transition-transform">
+                  arrow_forward
+                </span>
+              </button>
+            </form>
+          )}
         </section>
 
         {/* Details Section */}
@@ -170,7 +328,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-ui-label text-ui-label text-on-surface-variant uppercase font-bold">Network_Mail</div>
-                    <div className="font-code-sm text-code-sm font-bold text-primary">CORE@HACKSTONE.IO</div>
+                    <div className="font-code-sm text-code-sm font-bold text-primary">Hackstone2025@outlook.com</div>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -179,7 +337,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-ui-label text-ui-label text-on-surface-variant uppercase font-bold">Physical_Core</div>
-                    <div className="font-code-sm text-code-sm font-bold text-primary">12 TECHNICAL WAY, TECH CITY, LONDON, UK</div>
+                    <div className="font-code-sm text-code-sm font-bold text-primary">India</div>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -188,25 +346,31 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-ui-label text-ui-label text-on-surface-variant uppercase font-bold">Secure_Line</div>
-                    <div className="font-code-sm text-code-sm font-bold text-primary">+44 20 7946 0123</div>
+                    <div className="font-code-sm text-code-sm font-bold text-primary">+91 8490051752</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="border border-primary bg-background overflow-hidden relative">
-              <img 
-                className="w-full h-48 object-cover grayscale opacity-80" 
+              <img
+                className="w-full h-48 object-cover grayscale opacity-80"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRTiNeSXNKBc4NMc5mUmbitUQwDvq6lHhTFqOSxXzHtOfsSt58aEA-j4QvKX7ltcbkGGIdmovuUzZ0oT14NpqD6ItVlmL3HzRcQOx9xAugpMlFoMGX-4V3QFHilqGluKCkIFR_qwrxMPMq1UbZ4RLOAAyUOhAB8hO7CIirVXlT5qavIMv7LAp7uKDSYsAPSYOkgQVKhXTt69yOS3goLihebVPX7vCgbmj8Zv4_3sf4Ur1okBOB9Znp6rpGeqIYlChTnQq5rpOdkh3d"
                 alt="Motherboard circuitry location map"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-primary/90 text-on-primary p-2 font-code-sm text-center font-bold">
-                LOCATION_MAP: LONDON_UK_EST_2024
+                LOCATION_MAP: India
               </div>
             </div>
           </div>
-          <div className="mt-stack-lg pt-stack-lg border-t border-primary/20">
+          <div className="mt-stack-lg pt-stack-lg border-t border-primary/20 space-y-1.5">
             <div className="font-ui-label text-[10px] text-on-surface-variant uppercase tracking-tighter font-bold">
-              Time_Sync: <span className="text-primary font-bold">{timeStr}</span>
+              Local_Time: <span className="text-primary font-bold">{timeStr}</span>
+            </div>
+            <div className="font-ui-label text-[10px] text-on-surface-variant uppercase tracking-tighter font-bold">
+              Timezone: <span className="text-primary font-bold">{timezoneName}</span>
+            </div>
+            <div className="font-ui-label text-[9px] text-on-surface-variant/80 tracking-tighter">
+              Timezone detected automatically
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BrutalistButton from '../components/BrutalistButton';
+import heroIllustration from '../assets/hero_illustration.png';
 
 export default function Home() {
   useEffect(() => {
@@ -48,11 +49,11 @@ export default function Home() {
             </div>
 
           </div>
-          <div className="md:col-span-4 border border-primary p-gutter bg-white relative aspect-square group overflow-hidden">
+          <div className="md:col-span-4 border border-primary p-gutter bg-white relative aspect-square group flex items-center justify-center overflow-hidden">
             <img 
               alt="Secure Server Infrastructure" 
-              className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 transition-all duration-700" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfWYDTlRqMEcrVGSFQyi3-2jlY9GcMLEOmaSK4wNuXrZBF4BFWaUCHyyKqLIpUlxL6Vw5cNSN1tzyeGx6N3fXwobhMTUgcfgc3MSFT-v2w45izrNBgWFd_JHaivC4Ti2HC4pHA0uobxfzHE1sNSua2YD4zQFH1-oUMvXuhj9DyDEc8QgT9PfFAz11igK5EPobCJQke9DrLFsWvb4-CeHG1JaGaTCpTG6etzBvdWw_K_X1WXXidkrtZC0GO_Ct-y54eDROUdFOSwL6I"
+              className="w-[75%] h-[75%] max-[1023px]:w-[80%] max-[1023px]:h-[80%] max-[767px]:w-[85%] max-[767px]:h-[85%] object-contain transition-all duration-700 contrast-[1.07]" 
+              src={heroIllustration}
             />
             <div className="absolute inset-0 border-[20px] border-background pointer-events-none"></div>
           </div>

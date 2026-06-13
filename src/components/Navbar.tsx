@@ -24,7 +24,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-stack-lg">
+        <div className="hidden lg:flex max-lg:!hidden items-center gap-stack-lg">
           <NavLink
             to="/services"
             className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* Right side CTA & Icons */}
         <div className="flex items-center gap-stack-md">
           {/* Search Button */}
-          <div className="relative flex items-center">
+          <div className="relative hidden md:flex items-center">
             {searchOpen && (
               <input
                 type="text"
@@ -84,7 +84,7 @@ export default function Navbar() {
             to="/contact"
             variant="nav-cta"
             size="sm"
-            className="hidden sm:inline-block"
+            className="hidden md:inline-block"
           >
             Get Started
           </BrutalistButton>
@@ -92,7 +92,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden material-symbols-outlined text-primary dark:text-on-primary p-1 hover:opacity-80 transition-opacity"
+            className="lg:!hidden material-symbols-outlined text-primary dark:text-on-primary p-1 hover:opacity-80 transition-opacity"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? 'close' : 'menu'}
@@ -102,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile/Tablet Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-primary dark:border-outline bg-background dark:bg-primary px-grid-margin py-stack-md flex flex-col gap-stack-md transition-all duration-200">
+        <div className="lg:!hidden border-t border-primary dark:border-outline bg-background dark:bg-primary px-grid-margin py-stack-md flex flex-col gap-stack-md transition-all duration-200">
           <NavLink
             to="/services"
             onClick={() => setMobileMenuOpen(false)}
