@@ -1,14 +1,21 @@
 import { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import BrutalistButton from './BrutalistButton';
 
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const activeLinkClass = "font-ui-label text-ui-label text-primary dark:text-syntax-lime border-b border-primary dark:border-syntax-lime pb-1 hover:text-secondary dark:hover:text-syntax-lime transition-colors duration-150";
   const inactiveLinkClass = "font-ui-label text-ui-label text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-syntax-lime transition-colors duration-150";
+
+  const isServicesActive = location.pathname.startsWith('/services');
+  const isProductsActive = location.pathname.startsWith('/products');
+  const isTestimonialsActive = location.pathname.startsWith('/testimonials');
+  const isAboutActive = location.pathname.startsWith('/about');
+  const isContactActive = location.pathname.startsWith('/contact');
 
   return (
     <header className="w-full top-0 sticky border-b border-primary dark:border-outline bg-background dark:bg-primary z-50 transition-colors duration-200">
@@ -25,36 +32,36 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex max-lg:!hidden items-center gap-stack-lg">
-          <NavLink
+          <Link
             to="/services"
-            className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
+            className={isServicesActive ? activeLinkClass : inactiveLinkClass}
           >
             Services
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/products"
-            className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
+            className={isProductsActive ? activeLinkClass : inactiveLinkClass}
           >
             Products
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/testimonials"
-            className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
+            className={isTestimonialsActive ? activeLinkClass : inactiveLinkClass}
           >
             Case Studies
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/about"
-            className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
+            className={isAboutActive ? activeLinkClass : inactiveLinkClass}
           >
             About
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             to="/contact"
-            className={({ isActive }) => isActive ? activeLinkClass : inactiveLinkClass}
+            className={isContactActive ? activeLinkClass : inactiveLinkClass}
           >
             Contact
-          </NavLink>
+          </Link>
         </div>
 
         {/* Right side CTA & Icons */}
@@ -106,35 +113,35 @@ export default function Navbar() {
           <NavLink
             to="/services"
             onClick={() => setMobileMenuOpen(false)}
-            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+            className={isServicesActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
           >
             Services
           </NavLink>
           <NavLink
             to="/products"
             onClick={() => setMobileMenuOpen(false)}
-            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+            className={isProductsActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
           >
             Products
           </NavLink>
           <NavLink
             to="/testimonials"
             onClick={() => setMobileMenuOpen(false)}
-            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+            className={isTestimonialsActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
           >
             Case Studies
           </NavLink>
           <NavLink
             to="/about"
             onClick={() => setMobileMenuOpen(false)}
-            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+            className={isAboutActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
           >
             About
           </NavLink>
           <NavLink
             to="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className={({ isActive }) => isActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
+            className={isContactActive ? activeLinkClass + " w-fit" : inactiveLinkClass + " w-fit"}
           >
             Contact
           </NavLink>

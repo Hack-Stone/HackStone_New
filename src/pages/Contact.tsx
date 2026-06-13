@@ -7,7 +7,14 @@ export default function Contact() {
   const [workEmail, setWorkEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [company, setCompany] = useState('');
-  const [serviceRequired, setServiceRequired] = useState('Cybersecurity');
+  const [serviceRequired, setServiceRequired] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get('service');
+    if (service === 'shipcore' || service === 'erp') {
+      return 'ERP Systems';
+    }
+    return 'Cybersecurity';
+  });
   const [projectType, setProjectType] = useState('New Project');
   const [projectTimeline, setProjectTimeline] = useState('ASAP');
   const [budget, setBudget] = useState('Under $10k');

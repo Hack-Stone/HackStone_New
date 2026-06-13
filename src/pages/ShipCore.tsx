@@ -44,10 +44,10 @@ export default function ShipCore() {
               BOOK DEMO
             </Link>
             <Link 
-              to="/contact" 
+              to="/products/shipcore/updates" 
               className="px-8 py-4 font-ui-label text-ui-label brutalist-border hover:bg-primary hover:text-white transition-all text-center bg-transparent text-primary font-bold"
             >
-              VERSION NOTES
+              PRODUCT UPDATES
             </Link>
           </div>
         </div>

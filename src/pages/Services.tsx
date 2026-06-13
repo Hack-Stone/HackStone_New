@@ -62,9 +62,9 @@ export default function Services() {
           {/* Services Bento Grid */}
           <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2">
             {/* Cybersecurity */}
-            <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Cybersecurity...')}
-              className="border-b md:border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
+            <Link 
+              to="/services/cybersecurity"
+              className="border-b md:border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container block hover:-translate-y-1.5 duration-300"
             >
               <div className="flex justify-between items-start mb-stack-lg">
                 <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110 group-hover:text-syntax-lime">
@@ -76,15 +76,15 @@ export default function Services() {
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Security assessments, penetration testing, and zero-trust architecture implementation to protect sensitive assets.
               </p>
-              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary">
+              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary group-hover:underline">
                 -&gt; READ_SPECS
               </div>
-            </div>
+            </Link>
 
             {/* Software Engineering */}
-            <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Software Engineering...')}
-              className="border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
+            <Link 
+              to="/services/software-engineering"
+              className="border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container block hover:-translate-y-1.5 duration-300"
             >
               <div className="flex justify-between items-start mb-stack-lg">
                 <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110 group-hover:text-syntax-purple">
@@ -96,70 +96,90 @@ export default function Services() {
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Custom web applications engineered with modern stacks (React, Rust, Node) for maximum performance and scalability.
               </p>
-              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary">
+              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary group-hover:underline">
                 -&gt; READ_SPECS
               </div>
-            </div>
+            </Link>
+
+            {/* Web Development */}
+            <Link 
+              to="/services/web-development"
+              className="border-b md:border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container block hover:-translate-y-1.5 duration-300"
+            >
+              <div className="flex justify-between items-start mb-stack-lg">
+                <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110 group-hover:text-syntax-lime">
+                  window
+                </span>
+                <span className="font-code-sm text-code-sm text-outline">03</span>
+              </div>
+              <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Web Development</h3>
+              <p className="font-body-md text-on-surface-variant mb-stack-md">
+                Custom business websites, portals, dashboards, and modern web applications engineered for performance and scalability.
+              </p>
+              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary group-hover:underline">
+                -&gt; READ_SPECS
+              </div>
+            </Link>
 
             {/* ERP Systems */}
-            <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for ERP Systems...')}
-              className="border-b md:border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
+            <Link 
+              to="/services/erp-systems"
+              className="border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container block hover:-translate-y-1.5 duration-300"
             >
               <div className="flex justify-between items-start mb-stack-lg">
                 <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110 group-hover:text-syntax-lime">
                   settings_applications
                 </span>
-                <span className="font-code-sm text-code-sm text-outline">03</span>
+                <span className="font-code-sm text-code-sm text-outline">04</span>
               </div>
               <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">ERP Systems</h3>
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Internal workflow systems and resource planning tools tailored to your unique operational logic.
               </p>
-              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary">
+              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary group-hover:underline">
                 -&gt; READ_SPECS
               </div>
-            </div>
+            </Link>
 
             {/* Cloud & DevOps */}
-            <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Cloud & DevOps...')}
-              className="border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container"
+            <Link 
+              to="/services/cloud-devops"
+              className="border-b md:border-r border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container block hover:-translate-y-1.5 duration-300"
             >
               <div className="flex justify-between items-start mb-stack-lg">
                 <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110 group-hover:text-syntax-purple">
                   cloud
                 </span>
-                <span className="font-code-sm text-code-sm text-outline">04</span>
+                <span className="font-code-sm text-code-sm text-outline">05</span>
               </div>
               <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Cloud & DevOps</h3>
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Infrastructure as Code (IaC), AWS/GCP orchestration, and automated CI/CD pipeline deployments.
               </p>
-              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary">
+              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary group-hover:underline">
                 -&gt; READ_SPECS
               </div>
-            </div>
+            </Link>
 
             {/* Technology Consulting */}
-            <div 
-              onClick={() => console.log('[HACKSTONE_SHELL]: Accessing specs for Technology Consulting...')}
-              className="md:col-span-2 border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-surface-container-low hover:bg-surface-container"
+            <Link 
+              to="/services/technology-consulting"
+              className="border-b border-primary p-grid-margin group service-card transition-all cursor-pointer bg-background hover:bg-surface-container block hover:-translate-y-1.5 duration-300"
             >
               <div className="flex justify-between items-start mb-stack-lg">
                 <span className="material-symbols-outlined text-4xl text-primary transition-transform group-hover:scale-110 group-hover:text-syntax-lime">
                   analytics
                 </span>
-                <span className="font-code-sm text-code-sm text-outline">05</span>
+                <span className="font-code-sm text-code-sm text-outline">06</span>
               </div>
               <h3 className="font-headline-md uppercase mb-stack-sm text-primary font-bold">Technology Consulting</h3>
               <p className="font-body-md text-on-surface-variant mb-stack-md">
                 Strategic technical roadmaps and digital transformation audits for growing enterprises requiring legacy modernization.
               </p>
-              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary">
+              <div className="border-t border-primary pt-stack-sm font-ui-label text-ui-label text-primary group-hover:underline">
                 -&gt; READ_SPECS
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
